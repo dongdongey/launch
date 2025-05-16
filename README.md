@@ -82,3 +82,13 @@ launch list
 Example: launch end another_task --path ./
 (looks for a Launch.toml file in the current directory)
 ```
+
+---
+
+**📝 Be careful when editing `Launch.toml`!**
+
+While tasks are running, the `Launch.toml` file includes their `pid` information.
+If you manually edit the file during execution, the `pid` data may become inconsistent,
+which can break `end` or `restart` commands.
+
+> **In short: avoid editing `Launch.toml` while tasks are running.**
